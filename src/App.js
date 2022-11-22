@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [nombre, setNombre] = useState('')
+  const [correo, setCorreo] = useState('')
+  const [telefono, setTelefono] = useState('')
+  
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+    <header className="App-header">
+        <form action = "" method = "POST">
+          <input value={nombre} placeholder='Nombre' type="text" onChange={(e) =>{
+            setNombre(e.target.value)
+          }} />
+          <input value={correo} placeholder='Correo' type="text"
+            onChange={(e) =>{
+            setCorreo(e.target.value)
+          }}
+          
+          />
+          <input value={telefono} placeholder='Telefono' type="text"
+              onChange={(e) =>{
+              setTelefono(e.target.value)
+            }}
+          />
+
+        </form>
+    </header>
+    
   );
 }
 
